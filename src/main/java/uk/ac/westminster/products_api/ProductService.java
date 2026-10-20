@@ -1,5 +1,4 @@
 package uk.ac.westminster.products_api;
-import io.micrometer.common.KeyValues;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,9 +15,6 @@ public class ProductService {
         return product;
     }
 }
-
-public Optional<Product> getProductById(Long id) {
-    KeyValues products;
-    return products.stream()
-            .filter(p -> p.getId().equals(id))
-            .findFirst();
+public void setId(Long id) { this.id = id; }
+public void setName(String name) { this.name = name; }
+public void setPrice(double price) { this.price = price; }
